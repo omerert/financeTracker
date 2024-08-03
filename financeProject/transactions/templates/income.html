@@ -1,0 +1,17 @@
+{% extends 'layout.html'%}
+
+{% block title%}
+    Income
+{% endblock%}
+{% block mainTitle %}
+<h1>Income</h1>
+{% endblock %}
+{% block content %}
+    
+    {% for income  in incomes %}
+    <h2>{{ income.name}}</h2>
+    <p>{{ income.date}}</p>
+    <p>${{ income.amount}}</p>
+    <br>
+    {% endfor %}
+{% endblock content %}
