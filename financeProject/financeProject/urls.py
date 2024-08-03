@@ -27,7 +27,8 @@ urlpatterns = [
     # path('', include('django.contrib.auth.urls')),  # Add this line to use built-in auth views
     path('',views.home),
     path('about/',views.about),
-    path('transactions/', include('transactions.urls'))
+    path('transactions/', include('transactions.urls')),
+    path('users/', include('users.urls')),
 
 ]
 

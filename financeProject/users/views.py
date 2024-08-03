@@ -6,8 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def register(request):
-    form = UserCreationForm()
-    return render(request, 'users/register.html', {'form': form})
+    # form = UserCreationForm()
+    return render(request, 'users/register.html')
 
 # @login_required
 # def user_logout(request):
