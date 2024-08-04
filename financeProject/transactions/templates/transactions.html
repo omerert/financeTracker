@@ -6,12 +6,15 @@
 {% block mainTitle %}
     <h1>Transactions</h1>
 {% endblock mainTitle %}
+{%block main%}
 {% block content %}
     
-    {% for income  in incomes %}
-    <h2>{{ income.title}}</h2>
-    <p>{{ income.date}}</p>
-    <p>${{ income.amount}}</p>
+    {% for t in transactions %}
+    <h2>{{ t.title}} - {{ t.transactionType }}</h2>
+    <p>${{ t.amount}}</p>
+    <p>{{ t.date}}</p>
     <br>
     {% endfor %}
+    <h2> {{ totalExpense}}</h2>
 {% endblock content %}
+{%endblock main%}
