@@ -37,3 +37,8 @@ class Transaction(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField()
     expenceType = models.CharField(max_length=15, choices=EXPENCE_TYPE)
+
+    def getTransactionType(self):
+        if self.transactionType == 'I':
+            return 'Income'
+        return 'Expense'

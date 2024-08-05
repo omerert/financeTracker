@@ -10,7 +10,7 @@
 {% block content %}
     
     {% for t in transactions %}
-    <h2>{{ t.title}} - {{ t.transactionType }}</h2>
+    <h2>{{ t.title}} - {{ t.getTransactionType }}</h2>
     <p>${{ t.amount}}</p>
     <p>{{ t.date}}</p>
     <br>
