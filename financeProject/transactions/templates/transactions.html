@@ -10,8 +10,8 @@
 {% block content %}
     
     {% for t in transactions %}
-    <h2>{{ t.title}} - {{ t.getTransactionType }}</h2>
-    <p>{{ t.date}}</p>
+    <h2> {{t.date|date:"M j, Y"}} </h2>
+    <p>{{ t.title}} - {{ t.getTransactionType }}</p>
     <p>${{ t.amount}}</p>
     {% if not t.getTransactionType == 'Income' %}
         <p>{{ t.amount }} - {{ t.percentage|floatformat:2 }}% of total expenses</p>
