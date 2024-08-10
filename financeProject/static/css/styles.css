@@ -29,7 +29,7 @@ main {
 
 p {
     text-align: left;
-    text-indent: 5%;
+    /* text-indent: 5%; */
 }
 
 a {

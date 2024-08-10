@@ -11,8 +11,11 @@
     
     {% for t in transactions %}
     <h2>{{ t.title}} - {{ t.getTransactionType }}</h2>
-    <p>${{ t.amount}}</p>
     <p>{{ t.date}}</p>
+    <p>${{ t.amount}}</p>
+    {% if not t.getTransactionType == 'Income' %}
+        <p>{{ t.amount }} - {{ t.percentage|floatformat:2 }}% of total expenses</p>
+    {% endif %}
     <br>
     {% endfor %}
     <h2> {{ totalExpense}}</h2>

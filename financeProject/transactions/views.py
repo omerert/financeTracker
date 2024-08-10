@@ -8,7 +8,10 @@ def listIncome(request):
     return render(request, 'income/income.html', {'incomes': incomes})
 def listTransaction(request):
     transactions = Transaction.objects.all().order_by("-date")
-    totalExpense = Transaction.objects.filter(transactionType='E')
-    total_expense_amount = totalExpense.aggregate(Sum('amount'))['amount__sum']
-    return render(request, 'transactions.html', {'transactions': transactions, 'totalExpense': total_expense_amount})
+    expences = Transaction.objects.filter(transactionType='E')
+    totalExpence = sum(t.amount for t in expences)
+     # Calculate percentage for each transaction
+    for t in transactions:
+        t.percentage = (t.amount / totalExpence) * 100
+    return render(request, 'transactions.html', {'transactions': transactions, 'totalExpense': totalExpence})
 
